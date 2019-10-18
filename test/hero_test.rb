@@ -22,7 +22,7 @@ class HeroTest < Minitest::Test
   def test_hp
     assert_equal(@hero.hp, 50)
   end
-
+  #死んでいるかどうか確認
   def test_dead
     hero_hp1 = Hero.new('ああああ', 1)
     hero_hp0 = Hero.new('ああああ', 0)
@@ -32,4 +32,13 @@ class HeroTest < Minitest::Test
     assert_equal(hero_hp0.dead?, true)
     assert_equal(hero_hpminus.dead?, true)
   end
+  #HPがマンタンかどうか確認
+  def test_fullpower
+    hero_hp2 = Hero.new('いいいい', 30)
+    hero_hp3 = Hero.new('うううう', 40)
+  
+    assert_equal(hero_hp2.fullpower?,true)
+    assert_equal(hero_hp3.fullpower?,true)
+  end
+
 end
